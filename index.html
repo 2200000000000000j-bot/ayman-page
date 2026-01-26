@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>AYMAN ATYF | Free Fire VIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI, Tahoma;
+  background: linear-gradient(135deg,#12001a,#2b0040,#0a0012);
+  color:white;
+  direction:rtl;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px 15px;
+}
+
+/* العنوان */
+.title{
+  font-size:42px;
+  font-weight:800;
+  background: linear-gradient(90deg,#00ff9c,#9b5cff,#00ff9c);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.subtitle{
+  margin-top:8px;
+  color:#d6b8ff;
+}
+
+/* أزرار */
+.cards{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:170px;
+  padding:12px;
+  border-radius:14px;
+  text-decoration:none;
+  color:white;
+  font-size:18px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #9b5cff;
+}
+
+.instagram{background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045)}
+.whatsapp{background:linear-gradient(45deg,#00ff9c,#00b36b)}
+
+/* الفواصل */
+.line{
+  height:4px;
+  width:80%;
+  margin:40px auto;
+  border-radius:50px;
+  background:linear-gradient(90deg,#9b5cff,#00ff9c);
+}
+
+/* الورق */
+.paper{
+  background: linear-gradient(135deg,#fff3b0,#e0b3ff);
+  color:#2a0038;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  text-align:justify;
+  line-height:2;
+  font-size:17px;
+}
+
+/* اللعبة */
+.game-wrapper{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+}
+
+.game-box{
+  background:#000;
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 0 40px #00ff9c;
+}
+
+canvas{
+  background:#111;
+  border-radius:10px;
+  display:block;
+}
+
+/* العداد */
+.timer{
+  margin-top:20px;
+  font-size:22px;
+  color:#00ff9c;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="title">AYMAN ATYF</div>
+<div class="subtitle">Free Fire VIP Scripts</div>
+
+<div class="cards">
+  <a class="card instagram" href="https://instagram.com/18_me_ayman" target="_blank">إنستغرام</a>
+  <a class="card whatsapp" href="https://wa.me/212676410647" target="_blank">واتساب</a>
+</div>
+
+<div class="line"></div>
+
+<div class="paper">
+<h2>مقال عن Free Fire والسكريبت</h2>
+Free Fire ليست مجرد لعبة عادية، بل هي عالم كامل من المنافسة، الذكاء، سرعة البديهة والتحكم في الأعصاب.
+السكريبتات في Free Fire هي أدوات برمجية تساعد على تحسين تجربة اللعب وإضافة مميزات احترافية مثل
+تحسين التصويب، تسريع الحركة، أو إضافة واجهات VIP.
+
+هذا السكريبت سيشتغل 100% بدون باند وبدون بلاك ليست،
+لقد أضفت إليه حماية قوية ضد الكشف، وتم تصميمه بطريقة ذكية تحاكي أسلوب اللعب الطبيعي،
+وشكراً منكم لا تنسوا الاشتراك في القناة يا أحلى متابعيني ❤️
+</div>
+
+<div class="line"></div>
+
+<div class="paper">
+<h2>دعاء إلى أمي رحمها الله</h2>
+اللهم ارحم أمي رحمةً واسعة تغمر روحها بنورك،
+اللهم اجعل قبرها روضة من رياض الجنة،
+واجعل ملائكة الرحمة تحيط بها من كل جانب.
+
+اللهم إن كانت محسنة فزد في إحسانها،
+وإن كانت مسيئة فتجاوز عن سيئاتها،
+واكتب لها الفردوس الأعلى بلا حساب ولا سابق عذاب.
+
+اللهم اربط على قلبي شوقي إليها،
+واجعل لقائي بها في جناتك لقاءً بلا فراق،
+وارزقني برها حية وميتة،
+يا أرحم الراحمين.
+</div>
+
+<div class="line"></div>
+
+<h2>🎮 لعبة تجريبية (من اختراعي)</h2>
+<p>اضغط على المسافة أو داخل المربع للقفز</p>
+
+<div class="game-wrapper">
+<div class="game-box">
+<canvas id="game" width="420" height="180"></canvas>
+</div>
+</div>
+
+<div class="timer">
+التحويل بعد <span id="count">55</span> ثانية
+</div>
+
+</div>
+
+<!-- صوت القفز -->
+<audio id="jumpSound">
+  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// العداد 55 ثانية
+let time=55;
+let counter=setInterval(()=>{
+  time--;
+  document.getElementById("count").innerText=time;
+  if(time<=0){
+    clearInterval(counter);
+    window.location="login.html";
+  }
+},1000);
+
+// اللعبة
+const canvas=document.getElementById("game");
+const ctx=canvas.getContext("2d");
+const jumpSound=document.getElementById("jumpSound");
+
+let ground = canvas.height - 30;
+
+let player={
+  x:40,
+  y:ground-20,
+  w:20,
+  h:20,
+  vy:0,
+  jumping:false
+};
+
+let gravity=0.7;
+let obstacle={x:canvas.width,y:ground-20,w:20,h:20};
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // الأرض
+  ctx.fillStyle="#444";
+  ctx.fillRect(0,ground,canvas.width,4);
+
+  // اللاعب
+  ctx.fillStyle="#00ff9c";
+  ctx.fillRect(player.x,player.y,player.w,player.h);
+
+  // العائق
+  ctx.fillStyle="#ff3b3b";
+  ctx.fillRect(obstacle.x,obstacle.y,obstacle.w,obstacle.h);
+
+  // فيزياء
+  player.vy+=gravity;
+  player.y+=player.vy;
+
+  if(player.y >= ground-player.h){
+    player.y = ground-player.h;
+    player.vy = 0;
+    player.jumping=false;
+  }
+
+  obstacle.x -= 4;
+  if(obstacle.x < -20){
+    obstacle.x = canvas.width;
+  }
+
+  requestAnimationFrame(draw);
+}
+
+function jump(){
+  if(!player.jumping){
+    player.vy = -12;
+    player.jumping=true;
+    jumpSound.currentTime=0;
+    jumpSound.play();
+  }
+}
+
+document.addEventListener("keydown",e=>{
+  if(e.code==="Space") jump();
+});
+
+canvas.addEventListener("click",jump);
+
+draw();
+</script>
+
+</body>
+</html>
