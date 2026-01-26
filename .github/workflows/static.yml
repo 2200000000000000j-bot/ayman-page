@@ -1,43 +1,215 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>AYMAN ATYF | Free Fire VIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI, Tahoma;
+  background: linear-gradient(135deg,#12001a,#2b0040,#0a0012);
+  color:white;
+  direction:rtl;
+  text-align:center;
+}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px 15px;
+}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+.title{
+  font-size:42px;
+  font-weight:800;
+  background: linear-gradient(90deg,#00ff9c,#9b5cff,#00ff9c);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+.subtitle{
+  margin-top:8px;
+  color:#d6b8ff;
+}
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+.cards{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:160px;
+  padding:12px;
+  border-radius:14px;
+  text-decoration:none;
+  color:white;
+  font-size:18px;
+  background: rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px #9b5cff;
+}
+
+.instagram{background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045)}
+.whatsapp{background:linear-gradient(45deg,#00ff9c,#00b36b)}
+
+.line{
+  height:4px;
+  width:80%;
+  margin:40px auto;
+  border-radius:50px;
+  background:linear-gradient(90deg,#9b5cff,#00ff9c);
+}
+
+.paper{
+  background: linear-gradient(135deg,#fff3b0,#e0b3ff);
+  color:#2a0038;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  text-align:justify;
+  line-height:2;
+  font-size:17px;
+}
+
+.game-box{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+}
+
+canvas{
+  background:#111;
+  border-radius:10px;
+  border:2px solid #00ff9c;
+}
+
+.timer{
+  margin-top:20px;
+  font-size:22px;
+  color:#00ff9c;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="title">AYMAN ATYF</div>
+<div class="subtitle">Free Fire VIP Scripts</div>
+
+<div class="cards">
+  <a class="card instagram" href="https://instagram.com/18_me_ayman" target="_blank">إنستغرام</a>
+  <a class="card whatsapp" href="https://wa.me/212676410647" target="_blank">واتساب</a>
+</div>
+
+<div class="line"></div>
+
+<div class="paper">
+<h2>مقال عن السكريبت</h2>
+هذا السكريبت سيشتغل 100% بدون باند وبدون بلاك ليست  
+لقد أضفت إليه حماية قوية جداً ضد الكشف  
+تم اختباره على عدة حسابات ويعمل بشكل طبيعي  
+وشكراً منكم لا تنسوا الاشتراك في القناة يا أحلى متابعيني ❤️
+</div>
+
+<div class="line"></div>
+
+<div class="paper">
+<h2>دعاء لأمي رحمها الله</h2>
+اللهم ارحم أمي رحمةً واسعة  
+واجعل قبرها نوراً وراحة وسكينة  
+واجمعني بها في الفردوس الأعلى  
+يا رب لا تحرمني من دعائها ولا من أجرها
+</div>
+
+<div class="line"></div>
+
+<h2>🎮 لعبة صغيرة</h2>
+<p>اضغط على المسافة أو داخل المربع للقفز</p>
+
+<div class="game-box">
+<canvas id="game" width="400" height="150"></canvas>
+</div>
+
+<div class="timer">
+التحويل بعد <span id="count">55</span> ثانية
+</div>
+
+</div>
+
+<audio id="jumpSound">
+  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
+</audio>
+
+<script>
+let time=55;
+setInterval(()=>{
+  time--;
+  document.getElementById("count").innerText=time;
+  if(time<=0){
+    window.location="login.html";
+  }
+},1000);
+
+const canvas=document.getElementById("game");
+const ctx=canvas.getContext("2d");
+const sound=document.getElementById("jumpSound");
+
+let ground=120;
+let player={x:30,y:ground,w:20,h:20,vy:0,jump:false};
+let obs={x:400,y:ground,w:20,h:20};
+let g=0.7;
+
+function draw(){
+  ctx.clearRect(0,0,400,150);
+
+  ctx.fillStyle="#00ff9c";
+  ctx.fillRect(player.x,player.y,player.w,player.h);
+
+  ctx.fillStyle="#ff3b3b";
+  ctx.fillRect(obs.x,obs.y,obs.w,obs.h);
+
+  player.vy+=g;
+  player.y+=player.vy;
+  if(player.y>=ground){
+    player.y=ground;
+    player.vy=0;
+    player.jump=false;
+  }
+
+  obs.x-=4;
+  if(obs.x<0) obs.x=400;
+
+  requestAnimationFrame(draw);
+}
+
+function jump(){
+  if(!player.jump){
+    player.vy=-12;
+    player.jump=true;
+    sound.play();
+  }
+}
+
+document.addEventListener("keydown",e=>{
+  if(e.code==="Space") jump();
+});
+canvas.addEventListener("click",jump);
+
+draw();
+</script>
+
+</body>
+</html>
