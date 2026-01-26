@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>صفحة أيمن</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#111;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  background:#222;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+}
+a{
+  display:block;
+  margin-top:20px;
+  padding:15px;
+  border-radius:25px;
+  text-decoration:none;
+  color:white;
+}
+.insta{background:#c13584;}
+.next{background:#25D366; display:none;}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>رحمك الله يا أمي 🤍</h2>
+  <p>اضغط أولاً على إنستغرام</p>
+
+  <!-- زر إنستغرام -->
+  <a class="insta" href="#" onclick="goInsta()">
+    فتح إنستغرام
+  </a>
+
+  <!-- زر التالي -->
+  <a id="nextBtn" class="next" href="step2.html">
+    التالي
+  </a>
+</div>
+
+<script>
+function goInsta(){
+  // نحفظ المرحلة
+  localStorage.setItem("insta","1");
+  // نخرج من الصفحة فعلياً
+  window.location.href = "https://www.instagram.com/18_me_ayman";
+}
+
+// عند الرجوع للصفحة
+if(localStorage.getItem("insta") === "1"){
+  document.getElementById("nextBtn").style.display = "block";
+}
+</script>
+
+</body>
+</html>
