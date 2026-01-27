@@ -77,5 +77,10 @@ function login(){
   }
 }
 </script>
+  <script>
+if(sessionStorage.getItem("visited") !== "yes"){
+    window.location.href = "index.html";
+}
+  </script>
 </body>
 </html>
