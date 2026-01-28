@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
-
-<body>
-  
-</body>
-
-</html>
-<!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
@@ -22,7 +8,6 @@
 <style>
 *{box-sizing:border-box}
 
-/* منع التحريك نهائياً */
 html, body{
   margin:0;
   padding:0;
@@ -45,7 +30,6 @@ body{
   color:#fff;
 }
 
-/* خلفية متحركة */
 .bg-lines{
   position:fixed;
   inset:0;
@@ -61,7 +45,6 @@ body{
   to{background-position:400px 400px}
 }
 
-/* الكرت */
 .card{
   width:360px;
   padding:35px;
@@ -72,11 +55,6 @@ body{
   box-shadow:0 30px 80px rgba(0,0,0,.7);
   text-align:center;
   z-index:2;
-  animation:fadeUp .8s ease;
-}
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px)}
-  to{opacity:1; transform:none}
 }
 
 .logo{
@@ -86,6 +64,7 @@ body{
   -webkit-background-clip:text;
   color:transparent;
 }
+
 .tagline{
   font-size:13px;
   color:#d6b8ff;
@@ -105,7 +84,6 @@ input{
   background:rgba(255,255,255,.15);
   color:white;
 }
-input::placeholder{color:#ccc}
 
 .eye{
   position:absolute;
@@ -114,10 +92,7 @@ input::placeholder{color:#ccc}
   transform:translateY(-50%);
   cursor:pointer;
   font-size:18px;
-  color:#ccc;
-  user-select:none;
 }
-.eye:hover{color:#00ff9c}
 
 button{
   width:100%;
@@ -131,41 +106,17 @@ button{
   font-size:16px;
   cursor:pointer;
 }
-button:hover{transform:scale(1.03)}
-button:disabled{opacity:.6}
 
 #msg{
   margin-top:15px;
   font-size:15px;
-  color:#00ff9c;
 }
+
 #timer{
   margin-top:8px;
   font-size:20px;
   font-weight:bold;
   color:#00ff9c;
-}
-
-/* فقاعات */
-.bubble{
-  position:fixed;
-  bottom:-40px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#00ff9c,#9b5cff);
-  animation:rise linear forwards;
-  z-index:1;
-}
-@keyframes rise{
-  to{
-    transform:translateY(-120vh) scale(1.2);
-    opacity:0;
-  }
-}
-
-.footer{
-  margin-top:25px;
-  font-size:11px;
-  opacity:.6;
 }
 </style>
 </head>
@@ -182,7 +133,7 @@ button:disabled{opacity:.6}
 
   <div class="input-wrap">
     <input id="pass" type="password" placeholder="Password">
-    <span id="eye" class="eye" onclick="togglePass()">👁️</span>
+    <span class="eye" onclick="togglePass()">👁️</span>
   </div>
 
   <button id="btn" onclick="login()">دخول آمن</button>
@@ -194,49 +145,37 @@ button:disabled{opacity:.6}
 </div>
 
 <script>
-function togglePass(){
-  if(pass.type==="password"){
-    pass.type="text";
-    eye.innerText="🙈";
-  }else{
-    pass.type="password";
-    eye.innerText="👁️";
-  }
-}
+/* بيانات الدخول */
+const USERNAME = "200";
+const PASSWORD = "AYMAN X FF";
 
-function bubbles(){
-  for(let i=0;i<35;i++){
-    const b=document.createElement("div");
-    b.className="bubble";
-    const s=10+Math.random()*20;
-    b.style.width=b.style.height=s+"px";
-    b.style.left=Math.random()*100+"vw";
-    b.style.animationDuration=(3+Math.random()*3)+"s";
-    document.body.appendChild(b);
-    setTimeout(()=>b.remove(),6000);
-  }
+function togglePass(){
+  pass.type = pass.type === "password" ? "text" : "password";
 }
 
 function login(){
-  user.style.display="none";
-  pass.style.display="none";
-  eye.style.display="none";
-  btn.disabled=true;
+  if(user.value !== USERNAME || pass.value !== PASSWORD){
+    msg.style.color = "#ff5c5c";
+    msg.innerText = "❌ اسم المستخدم أو كلمة السر غير صحيحة";
+    return;
+  }
 
-  msg.innerText="✔️ تم التحقق بنجاح";
-  bubbles();
+  msg.style.color = "#00ff9c";
+  msg.innerText = "✔️ تم التحقق بنجاح";
+  btn.disabled = true;
 
-  let t=60;
-  timer.innerText="الانتقال خلال "+t+" ثانية";
+  let t = 60;
+  timer.innerText = "الانتقال خلال " + t + " ثانية";
 
-  const c=setInterval(()=>{
+  const c = setInterval(()=>{
     t--;
-    timer.innerText="الانتقال خلال "+t+" ثانية";
-    if(t<=0){
+    timer.innerText = "الانتقال خلال " + t + " ثانية";
+    if(t <= 0){
       clearInterval(c);
-      window.location.href="page3.html"; // ← الصفحة الثالثة
+      sessionStorage.setItem("step2", "ok");
+      window.location.href = "page3.html";
     }
-  },1000);
+  }, 1000);
 }
 </script>
 <script>
