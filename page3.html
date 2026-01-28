@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>AYMAN VIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Segoe UI, Tahoma;
+  direction:rtl;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+
+  /* خلفية مثل الصورة (شبكة + تدرج) */
+  background:
+    linear-gradient(135deg, rgba(130,80,255,0.35), rgba(0,255,200,0.25)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.06) 0,
+      rgba(255,255,255,0.06) 1px,
+      transparent 1px,
+      transparent 42px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.06) 0,
+      rgba(255,255,255,0.06) 1px,
+      transparent 1px,
+      transparent 42px
+    ),
+    #0d0221;
+}
+
+/* الصندوق */
+.box{
+  width:420px;
+  background:rgba(58,58,68,0.9);
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
+  text-align:center;
+  border:1px solid #6a5acd;
+  backdrop-filter: blur(10px);
+}
+
+h2{color:#c9b6ff;margin:10px 0}
+
+.notice{
+  font-size:13px;
+  color:#e0d6ff;
+  line-height:1.8;
+  margin-bottom:14px;
+}
+
+.warning{
+  font-size:13px;
+  color:#ffd6d6;
+  background:rgba(255,0,0,0.12);
+  border:1px solid rgba(255,0,0,0.4);
+  padding:14px;
+  border-radius:12px;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,#9a8cff,transparent);
+  margin:18px 0;
+}
+
+/* الخانة */
+.link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+  padding:14px 16px;
+  border-radius:12px;
+  background: linear-gradient(90deg,#6a5acd,#9a8cff);
+  color:#1a1a1a;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.2s;
+}
+
+/* النص يسار */
+.link .text{
+  text-align:left;
+  flex:1;
+}
+
+/* الأيقونة يمين */
+.link .icon{
+  font-size:20px;
+  margin-left:14px;
+}
+
+.link:hover{
+  background: linear-gradient(90deg,#9a8cff,#c0b3ff);
+  transform:scale(1.02);
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#ccc;
+  line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <div class="notice">
+    الصفحه الرسميه لجميع انواع سكريبتات تعديل<br>
+    آمن على المستخدم — هذه انواع سكريبتات
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="warning">
+    ⚠️ تحذير هام<br>
+    يُنصح باستعمال <b>حساب جديد</b> قبل التجربة.<br>
+    الاستعمال على مسؤوليتك الشخصية.
+  </div>
+
+  <h2>تم الدخول بنجاح</h2>
+
+  <a class="link" href="#" target="_blank">
+    <span class="icon">⬇️</span>
+    <span class="text">سكريبت سعود فوق المباني بنجاح</span>
+  </a>
+
+  <a class="link" href="#" target="_blank">
+    <span class="icon">📦</span>
+    <span class="text">فري فاير امازون x86</span>
+  </a>
+
+  <a class="link" href="#" target="_blank">
+    <span class="icon">🧱</span>
+    <span class="text">سكريبت اختراق الجدران في برمودا</span>
+  </a>
+
+  <a class="link" href="#" target="_blank">
+    <span class="icon">🎬</span>
+    <span class="text">طريقة التركيب (فيديو)</span>
+  </a>
+
+  <a class="link" href="https://www.mediafire.com/file/qyvlsd3mozc3yh1/.zip/file" target="_blank">
+    <span class="icon">🔥</span>
+    <span class="text">سكريبت الرصاصة السحرية بدون ضماج وهمي 🫀</span>
+  </a>
+
+  <a class="link" href="https://www.mediafire.com/file/v2qttnizjrjnq5a/hs+PESCOSO+v10.zip/file" target="_blank">
+    <span class="icon">☠️</span>
+    <span class="text">هيد شوت 100% 💀</span>
+  </a>
+
+  <div class="footer">
+    محتوى تعليمي فقط<br>
+    © AYMAN VIP
+  </div>
+
+</div>
+<script>
+/* حماية الصفحة الثالثة */
+if(
+  sessionStorage.getItem("step1") !== "ok" ||
+  sessionStorage.getItem("step2") !== "ok"
+){
+  window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
